@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: my-app:1.0.0
+        image: shayc12/my-php-app:1
         volumeMounts:
         - name: shared-files
           mountPath: /var/www/html

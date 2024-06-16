@@ -1,11 +1,9 @@
-# Create a pod containing the PHP-FPM application (my-php-app)
-# and nginx, each mounting the `shared-files` volume to their
-# respective /var/www/html directories.
-
 kind: Pod
 apiVersion: v1
 metadata:
   name: phpfpm-nginx
+  label:
+    app: php-pod
 spec:
   volumes:
     - name: shared-files
@@ -14,7 +12,7 @@ spec:
       configMap:
         name: nginx-config
   containers:
-    - image: my-php-app:1.0.0
+    - image: shayc12/my-php-app:1
       name: app
       volumeMounts:
         - name: shared-files
