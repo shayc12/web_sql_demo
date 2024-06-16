@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: html_app
-  name: html_app
+    app: html-app
+  name: html-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: html_app
+      app: html-app
   template:
     metadata:
       labels:
-        app: html_app
+        app: html-app
     spec:
       containers:
       - image: shayc12/html_app:1
